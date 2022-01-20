@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Guild Messenger App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Abstract](#Abstract)
+- [Technologies](#Technologies)
+- [Code Architecture](#Code-Architecture)
+- [Install and Set Up](#Install-and-Set-Up)
+- [Illustrations](#Illustrations)
+- [Wins](#Wins)
+- [Challenges](#Challenges)
+- [Contributors](#Contributors)
+- [Project Specs](#Project-Specs)
 
-In the project directory, you can run:
+## Abstract
 
-### `npm start`
+This application allows users to chat with other users over instant message.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users are able to "log in" by choosing their name from the drop-down menu.  Once a user is logged in, they will see the conversations that they have going on and will be prompted to choose a conversation.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To select a conversation, users can click the name of the person they'd like to message under the "Conversations" section of the sidebar.  A chatbox will appear on the right panel, where users are able to enter their message in the input field and press enter/return to send.  Users will be able to see messages appear in the message display along with the name of the sender and the time/date the message was sent.
 
-### `npm test`
+To switch users, find another user in the drop-down menu and log them in.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was created as part of Guild Education's Full Stack Engineering hiring screening.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technical Requirements
+Click [here](https://docs.google.com/document/d/1ZwIFJUxDwg7etxBgsBYraXdjaQUo_9Z0FGnzGE0EUX4/edit?usp=sharing) to see the Technical Requirements of the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies
+- Javascript/React
+- HTML
+- CSS
+- React Hooks
+- Express.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Install and Set Up
 
-### `npm run eject`
+Follow the readme on [this repo](https://github.com/pthan1/guild_messenger_server) to set up the Express.js server.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After setting up the server, to run the application:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone down the repo
+2. Cd into `guild messenger`
+3. Run `npm install`
+4. Run `npm start`
+5. Navigate to `http://localhost:3000/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Code Architecture
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The React architecture is based on functional components and hooks.  
 
-## Learn More
+The backend is set up with Express.js and holds the user and conversation data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Wins & Challenges Overcame
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Creating the data model: Had to plan how to structure the data without a fully-fledge backend w/ relational databases in order to pass the least amount of data around as possible.  Had to plan out when to fetch data and the different API endpoints.
+- The app supports multiple users, validates a user, and matches users to their conversations.  
+  - This took a bit of business logic in order to make the application as dynamic as possible in order to support scaling the application to include multiple users. 
+- Had to re-use logic to determine a user's name from their ID, thus having to pass the same props down to different nested child components.  Would like to implement some sort of caching feature in order to make this easier.
+- Dealing with JavaScript dates
 
-### Code Splitting
+## Future Features
+- Web app routing: Implement a separate login page
+  - Allow multiple users to be signed in at a time
+- Implement GraphQL/Apollo on the backend to query/mutate data: This would allow me to simplify the network requests by having only one endpoint and make it easier/more flexible to reference data from different tables, and send appropriate responses.
+  - Having one endpoint would’ve been easier to manage as opposed to trying to figure out request parameters and different routes for users and conversations.
+- Have the ability for users to have Group Conversations with multiple people.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributors
+- [Phil Than](https://github.com/pthan1)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
