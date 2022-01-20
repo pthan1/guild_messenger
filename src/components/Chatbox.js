@@ -1,21 +1,27 @@
 
 const Chatbox = ({activeConversation}) => {
 
+  const displayMessages = () => {
+    
+    const messages = activeConversation.message_log.map(message => {
+      const date = new Date(message.time_sent).toString();
+      return (
+        <>
+        <p>{message.message}</p>
+        <p>{date}</p>
+        </>
+      )
+    })
+    return messages;
+  }
 
-  const messages = activeConversation.message_log.map(message => {
-    return (
-      <>
-      <p>{message.message}</p>
-      <p>{message.time_sent}</p>
-      </>
-    )
-  })
+
 
 
   return(
     <div className="right-panel">
       <div className="message-display">
-      {messages}
+      {displayMessages()}
       </div>
       <input type="text"></input>
     </div>
