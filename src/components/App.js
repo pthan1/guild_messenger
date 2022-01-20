@@ -4,6 +4,8 @@ import Sidebar from './Sidebar';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState();
+  const [userConversations, setUserConversations] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3001/api/v1/users')
@@ -20,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar users={users}/>
+      <Sidebar users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} userConversations={userConversations} setUserConversations={setUserConversations}/>
     {/* sidebar component */}
    {/* Conditional Render:
         if no user signed in, prompt a message to sign in
