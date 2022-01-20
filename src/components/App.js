@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <Sidebar users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} userConversations={userConversations} setUserConversations={setUserConversations} setActiveConversation={setActiveConversation} />
       {!currentUser && <div>Choose a User to Log In </div>}
-      {activeConversation && <Chatbox activeConversation={activeConversation}/>}
+      {activeConversation && <Chatbox users={users} activeConversation={activeConversation}/>}
 
     {/* Right side component */}
 

@@ -1,14 +1,14 @@
 
-const Chatbox = ({activeConversation}) => {
+const Chatbox = ({activeConversation, users}) => {
 
   const displayMessages = () => {
     
     const messages = activeConversation.message_log.map(message => {
       const date = new Date(message.time_sent).toString();
+      const user = users.find(user => user.id === message.sender).name;
       return (
         <>
-        <p>{message.message}</p>
-        <p>{date}</p>
+        <p>{user} ({date}): {message.message}</p>
         </>
       )
     })
