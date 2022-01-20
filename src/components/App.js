@@ -6,6 +6,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState();
   const [userConversations, setUserConversations] = useState([]);
+  const [activeConversation, setActiveConversation] = useState({});
 
   useEffect(() => {
     fetch('http://localhost:3001/api/v1/users')
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} userConversations={userConversations} setUserConversations={setUserConversations}/>
+      <Sidebar users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} userConversations={userConversations} setUserConversations={setUserConversations} setActiveConversation={setActiveConversation} />
       {!currentUser && <div>Choose a User to Log In </div>}
       {/* {currentUser && <Chatbox />} */}
    {/* Conditional Render:

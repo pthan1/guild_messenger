@@ -1,7 +1,7 @@
 import '../styles/Sidebar.css';
 import Conversations from './Conversations'
 
-const Sidebar = ({users, currentUser, setCurrentUser, userConversations, setUserConversations}) => {
+const Sidebar = ({users, currentUser, setCurrentUser, userConversations, setUserConversations, setActiveConversation}) => {
 
   const userOptions = users.map(user => {return <option value={user.id}>{user.name}</option>})
 
@@ -45,7 +45,7 @@ const Sidebar = ({users, currentUser, setCurrentUser, userConversations, setUser
             {userOptions}</select><br />
 
       <div className="conversations">
-      {currentUser && <Conversations userConversations={userConversations} currentUser={currentUser} users={users}/>}
+      {currentUser && <Conversations userConversations={userConversations} currentUser={currentUser} users={users} setActiveConversation={setActiveConversation}/>}
       </div>
     </div>
   )

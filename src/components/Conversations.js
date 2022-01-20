@@ -1,5 +1,5 @@
 
-const Conversations = ({userConversations, currentUser, users}) => {
+const Conversations = ({userConversations, currentUser, users, setActiveConversation}) => {
 
   const partners = () => {
     const partnerIds = userConversations.map((conversation, index) => {
@@ -13,16 +13,17 @@ const Conversations = ({userConversations, currentUser, users}) => {
         return user.id === id.ids[0];
         }
       )
-      return {partner: partner, id: id.index}
+      return {partner: partner, index: id.index}
       })
 
     console.log(convoPartners)
-    convoPartners = convoPartners.map(partner => <button onClick={handleClick}>{partner.partner.name}</button>)
+    convoPartners = convoPartners.map(partner => <button onClick={(e) => {e.preventDefault();
+    handleClick(partner.index)}}>{partner.partner.name}</button>)
 
     return convoPartners;
   }
-    const handleClick = () => {
-console.log('click')
+    const handleClick = (index) => {
+      setActiveConversation(userConversations[index])
     }
 
 
