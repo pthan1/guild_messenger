@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar users={users}/>
     {/* sidebar component */}
    {/* Conditional Render:
         if no user signed in, prompt a message to sign in

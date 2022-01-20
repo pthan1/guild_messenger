@@ -1,11 +1,14 @@
 import '../styles/Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({users}) => {
 
-  
+  const userOptions = users.map(user => {return <option value={user.name}>{user.name}</option>})
+
   return (
     <div className="sidebar">
-hello
+      <select name="userOptions" id="userOptions">
+       <option value="">Login</option> 
+            {userOptions}</select><br />
 
     </div>
   )
