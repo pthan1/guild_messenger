@@ -71,7 +71,8 @@ The backend is set up with Express.js and holds the user and conversation data.
 
 ## Walkthrough
 
-![Recording 2022-01-20 at 10 34 55 | width=500](https://user-images.githubusercontent.com/82873669/150391730-dc381f16-9e2c-4281-9f8d-90981997f256.gif)
+<img src="https://user-images.githubusercontent.com/82873669/150391730-dc381f16-9e2c-4281-9f8d-90981997f256.gif" width="300">
+![Recording 2022-01-20 at 10 34 55 | width=500]()
 
 
 ## Contributors
