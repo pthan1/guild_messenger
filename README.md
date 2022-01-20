@@ -34,6 +34,7 @@ Click [here](https://docs.google.com/document/d/1ZwIFJUxDwg7etxBgsBYraXdjaQUo_9Z
 - CSS
 - React Hooks
 - Express.js
+- GitHub Projects
 
 ## Install and Set Up
 
