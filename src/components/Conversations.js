@@ -6,7 +6,6 @@ const Conversations = ({userConversations, currentUser, users, setActiveConversa
       const ids = conversation.user_ids.filter(element => element !== currentUser);
       return {index, ids};
     })
-    console.log('partnerIds', partnerIds)
 
     let convoPartners = partnerIds.map(id => {
       const partner = users.find(user => {
@@ -16,7 +15,6 @@ const Conversations = ({userConversations, currentUser, users, setActiveConversa
       return {partner: partner, index: id.index}
       })
 
-    console.log(convoPartners)
     convoPartners = convoPartners.map(partner => <button onClick={(e) => {e.preventDefault();
     handleClick(partner.index)}}>{partner.partner.name}</button>)
 

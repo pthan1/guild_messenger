@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import '../styles/App.css';
 import Sidebar from './Sidebar';
+import Chatbox from './Chatbox';
 
 function App() {
   const [users, setUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState();
   const [userConversations, setUserConversations] = useState([]);
-  const [activeConversation, setActiveConversation] = useState({});
+  const [activeConversation, setActiveConversation] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3001/api/v1/users')
@@ -25,12 +26,8 @@ function App() {
     <div className="App">
       <Sidebar users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} userConversations={userConversations} setUserConversations={setUserConversations} setActiveConversation={setActiveConversation} />
       {!currentUser && <div>Choose a User to Log In </div>}
-      {/* {currentUser && <Chatbox />} */}
-   {/* Conditional Render:
-        if no user signed in, prompt a message to sign in
-        //if a user is signed in, Add a welcome message
-        //prompt user to choose a conversation
-         */}
+      {activeConversation && <Chatbox users={users} currentUser={currentUser} activeConversation={activeConversation} setActiveConversation={setActiveConversation} />}
+
     {/* Right side component */}
 
     </div>
