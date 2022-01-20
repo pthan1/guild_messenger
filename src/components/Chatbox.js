@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Chatbox = ({activeConversation, users, currentUser}) => {
+const Chatbox = ({activeConversation, users, currentUser, setActiveConversation}) => {
   const [newMessage, setNewMessage] = useState({});
   const [textInput, setTextInput] = useState('');
 
@@ -8,11 +8,11 @@ const Chatbox = ({activeConversation, users, currentUser}) => {
 
 
     const messages = activeConversation.message_log.map(message => {
-      const date = new Date(message.time_sent).toString();
+      // const date = new Date(message.time_sent).toString();
       const user = users.find(user => user.id === message.sender).name;
       return (
         <>
-        <p>{user} ({date}): {message.message}</p>
+        <p>{user} ({message.time_sent}): {message.message}</p>
         </>
       )
     })
@@ -50,6 +50,10 @@ console.log('hello')
           }
           return response.json()
         })
+        .then(data => {console.log('potatoes')
+        setActiveConversation(data)}
+        );
+
         clearInputs();
   }
 
