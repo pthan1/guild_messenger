@@ -23,7 +23,8 @@ function App() {
   return (
     <div className="App">
       <Sidebar users={users} currentUser={currentUser} setCurrentUser={setCurrentUser} userConversations={userConversations} setUserConversations={setUserConversations}/>
-    {/* sidebar component */}
+      {!currentUser && <div>Choose a User to Log In </div>}
+      {/* {currentUser && <Chatbox />} */}
    {/* Conditional Render:
         if no user signed in, prompt a message to sign in
         //if a user is signed in, Add a welcome message
