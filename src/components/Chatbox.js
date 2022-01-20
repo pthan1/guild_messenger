@@ -5,10 +5,7 @@ const Chatbox = ({activeConversation, users, currentUser, setActiveConversation}
   const [textInput, setTextInput] = useState('');
 
   const displayMessages = () => {
-
-
     const messages = activeConversation.message_log.map(message => {
-      // const date = new Date(message.time_sent).toString();
       const user = users.find(user => user.id === message.sender).name;
       return (
         <>
@@ -61,13 +58,15 @@ console.log('hello')
 
   return(
     <div className="right-panel">
-      <div className="message-display">
-      {displayMessages()}
-      </div>
+      {!activeConversation && <p>Choose a Conversation to Start Chatting!</p>}
+      {activeConversation && <div className="message-display">
+       {displayMessages()}
       <form className="search-form" onSubmit={event => handleSubmit(event)}>
       <input type="text" placeholder="Type your message here..." value={textInput} onChange={e => handleChange(e)} />
       </form>
-    </div>
+      </div>}
+     
+      </div>
   )
 }
 
