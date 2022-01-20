@@ -69,6 +69,11 @@ The backend is set up with Express.js and holds the user and conversation data.
   - Having one endpoint would’ve been easier to manage as opposed to trying to figure out request parameters and different routes for users and conversations.
 - Have the ability for users to have Group Conversations with multiple people.
 
+## Walkthrough
+
+![Recording 2022-01-20 at 10 34 55](https://user-images.githubusercontent.com/82873669/150391730-dc381f16-9e2c-4281-9f8d-90981997f256.gif)
+
+
 ## Contributors
 - [Phil Than](https://github.com/pthan1)
 
